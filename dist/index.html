@@ -4,6 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Gabriel Oliveira is a backend-focused full-stack developer building reliable APIs, automations and data processing systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gabriel Oliveira — Backend-focused Full-Stack Developer">
+  <meta property="og:description" content="Reliable APIs, practical automations and data processing tools.">
+  <meta property="og:image" content="https://gabriel-oliveira-engineer.gabrieloliv-dev.chatgpt.site/og.png">
+  <meta property="og:url" content="https://gabriel-oliveira-engineer.gabrieloliv-dev.chatgpt.site/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gabriel Oliveira — Backend-focused Full-Stack Developer">
+  <meta name="twitter:description" content="Reliable APIs, practical automations and data processing tools.">
+  <meta name="twitter:image" content="https://gabriel-oliveira-engineer.gabrieloliv-dev.chatgpt.site/og.png">
   <meta name="theme-color" content="#07110e">
   <title>Gabriel Oliveira — Full-Stack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -133,6 +142,7 @@
     .tags { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1.5rem 0 2rem; list-style: none; }
     .tags li { padding: .5rem .75rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 400 .72rem "DM Mono", monospace; }
     .project-link { width: fit-content; color: var(--accent); text-underline-offset: .35rem; text-decoration-thickness: 1px; font-weight: 700; }
+    .project-links { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 
     .risk-panel { position: relative; display: grid; place-items: center; padding: 2rem; background: radial-gradient(circle at 50% 20%, rgba(201,255,91,.12), transparent 55%), #0a1511; }
     .risk-card { --tilt-x: 0deg; --tilt-y: 0deg; width: min(100%, 390px); padding: 1.4rem; border: 1px solid rgba(201,255,91,.28); border-radius: 18px; background: rgba(7,17,14,.92); box-shadow: 0 30px 70px rgba(0,0,0,.38); transform: perspective(900px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)); transition: transform .18s ease-out, box-shadow .25s ease; transform-style: preserve-3d; }
@@ -241,6 +251,7 @@
         <div class="hero-actions">
           <a class="button" href="#work" data-i18n="heroWork">See selected work</a>
           <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer" data-i18n="heroGithub">GitHub profile</a>
+          <a class="button secondary" href="/resume.pdf" target="_blank" rel="noreferrer" data-i18n="heroResume">Download résumé</a>
         </div>
         <p class="availability" data-i18n="availability">Fortaleza, Brazil · Open to remote international roles</p>
       </div>
@@ -282,7 +293,10 @@
               <p data-i18n="prismCopy">A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.</p>
               <ul class="tags"><li>TypeScript</li><li>GitHub Actions</li><li>REST API</li><li>Security</li><li>Unit testing</li></ul>
             </div>
-            <a class="project-link" href="https://github.com/gabrielolvv/prism-review" target="_blank" rel="noreferrer" data-i18n="exploreRepo">Explore the repository</a>
+            <div class="project-links">
+              <a class="project-link" href="/prism-review/" data-i18n="readCaseStudy">Read the case study</a>
+              <a class="project-link" href="https://github.com/gabrielolvv/prism-review" target="_blank" rel="noreferrer" data-i18n="exploreRepo">Explore the repository</a>
+            </div>
           </div>
           <div class="risk-panel" aria-label="Illustration of a Prism Review report">
             <div class="risk-card" data-tilt>
@@ -349,6 +363,7 @@
         <h2 data-i18n="contactTitle">Looking for an engineer who connects code to real operations?</h2>
         <p data-i18n="contactCopy">I’m open to remote international opportunities across backend and full-stack product teams.</p>
         <div class="hero-actions">
+          <a class="button" href="mailto:gabrieloliv.dev@gmail.com" data-i18n="contactEmail">Send an email</a>
           <a class="button" href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer" data-i18n="contactLinkedin">Connect on LinkedIn</a>
           <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer" data-i18n="contactGithub">Review my code</a>
         </div>
@@ -360,7 +375,7 @@
     <div class="wrap footer-inner">
       <span>© <span id="year"></span> Gabriel Oliveira</span>
       <span class="mono" data-i18n="footerLine">Built with clarity, not clutter.</span>
-      <div class="footer-links"><a href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+      <div class="footer-links"><a href="mailto:gabrieloliv.dev@gmail.com">Email</a><a href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">LinkedIn</a></div>
     </div>
   </footer>
 
@@ -370,29 +385,29 @@
         skipLink: 'Skip to content', navWork: 'Work', navExperience: 'Experience', navStack: 'Stack', navConnect: 'Let’s connect',
         heroEyebrow: 'Backend-focused full-stack developer', heroTitle: 'I build systems that do the <em>hard work.</em>',
         heroCopy: 'Reliable APIs, practical automations and data processing tools — built to turn complex operations into software people can trust.',
-        heroWork: 'See selected work', heroGithub: 'GitHub profile', availability: 'Fortaleza, Brazil · Open to remote international roles',
+        heroWork: 'See selected work', heroGithub: 'GitHub profile', heroResume: 'Download résumé', availability: 'Fortaleza, Brazil · Open to remote international roles',
         workEyebrow: 'Selected work', workTitle: 'Proof over promises.', workIntro: 'A public project that shows how I think about reliability, security and developer experience — from architecture to tests and documentation.',
         ticker1: '<b>01</b> APIs', ticker2: '<b>02</b> Automation', ticker3: '<b>03</b> Data processing', ticker4: '<b>04</b> Cloud infrastructure', ticker5: '<b>05</b> Full-stack products',
-        projectType: '01 / DEVELOPER TOOL', prismCopy: 'A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.', exploreRepo: 'Explore the repository', riskScan: 'PR #142 · risk scan', riskLevel: 'MEDIUM', finding1Title: 'Missing test changes', finding1Copy: 'Source changed without matching test files.', finding2Title: 'Dependency update', finding2Copy: 'package-lock.json requires supply-chain review.', finding3Title: 'Safe execution model', finding3Copy: 'Repository code was not executed.',
+        projectType: '01 / DEVELOPER TOOL', prismCopy: 'A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.', readCaseStudy: 'Read the case study', exploreRepo: 'Explore the repository', riskScan: 'PR #142 · risk scan', riskLevel: 'MEDIUM', finding1Title: 'Missing test changes', finding1Copy: 'Source changed without matching test files.', finding2Title: 'Dependency update', finding2Copy: 'package-lock.json requires supply-chain review.', finding3Title: 'Safe execution model', finding3Copy: 'Repository code was not executed.',
         buildEyebrow: 'What I build', buildTitle: 'From raw input to reliable output.', buildIntro: 'My strongest work sits where business operations meet software: moving data safely, automating repetitive workflows and making systems easier to maintain.',
         cap1Title: 'API engineering', cap1Copy: 'Clean REST interfaces, business rules and integrations designed for predictable behavior.', cap2Title: 'Data workflows', cap2Copy: 'CSV, Excel, CNAB and large-file pipelines that validate, transform and reconcile information.', cap3Title: 'Automation', cap3Copy: 'Portal and browser automations that remove repetitive steps from real operational flows.', cap4Title: 'Document extraction', cap4Copy: 'PDF processing services that turn unstructured documents into usable application data.', cap5Title: 'Cloud delivery', cap5Copy: 'AWS services, Docker environments and infrastructure patterns that make deployment repeatable.', cap6Title: 'Product interfaces', cap6Copy: 'Responsive React and React Native experiences connected to practical backend systems.',
         experienceEyebrow: 'Experience', quote: '“Software should reduce operational friction — not move it somewhere else.”', nowTime1: '2022 — NOW', nowTime2: '2023 — NOW', role1Title: 'Full-Stack Developer · <strong>South Wind Solution</strong>', role1Copy: 'Building web and mobile applications, integrating APIs, fixing production issues, improving responsive experiences and translating product needs into working software.', role2Title: 'Cloud Infrastructure · <strong>Contract project</strong>', role2Copy: 'Developed infrastructure with Terraform and AWS, connecting TypeScript Lambdas, API Gateway, CloudWatch and DynamoDB.', role3Title: 'Product Development · <strong>Freelance</strong>', role3Copy: 'Delivered React Native product flows and compatibility fixes across Android and iOS environments.', role4Title: 'Systems Analysis & Development · <strong>University of Fortaleza</strong>', role4Copy: 'Technology degree focused on software development and systems analysis.',
         stackEyebrow: 'Toolbox', stackTitle: 'The stack follows the problem.', stackIntro: 'A cross-platform toolkit built around pragmatic delivery, maintainable code and useful automation.',
-        contactEyebrow: 'Let’s build something useful', contactTitle: 'Looking for an engineer who connects code to real operations?', contactCopy: 'I’m open to remote international opportunities across backend and full-stack product teams.', contactLinkedin: 'Connect on LinkedIn', contactGithub: 'Review my code', footerLine: 'Built with clarity, not clutter.'
+        contactEyebrow: 'Let’s build something useful', contactTitle: 'Looking for an engineer who connects code to real operations?', contactCopy: 'I’m open to remote international opportunities across backend and full-stack product teams.', contactEmail: 'Send an email', contactLinkedin: 'Connect on LinkedIn', contactGithub: 'Review my code', footerLine: 'Built with clarity, not clutter.'
       },
       pt: {
         skipLink: 'Pular para o conteúdo', navWork: 'Projetos', navExperience: 'Experiência', navStack: 'Tecnologias', navConnect: 'Vamos conversar',
         heroEyebrow: 'Desenvolvedor full-stack com foco em backend', heroTitle: 'Eu crio sistemas que fazem o <em>trabalho pesado.</em>',
         heroCopy: 'APIs confiáveis, automações práticas e ferramentas de processamento de dados — construídas para transformar operações complexas em software no qual as pessoas podem confiar.',
-        heroWork: 'Ver projetos', heroGithub: 'Perfil no GitHub', availability: 'Fortaleza, Brasil · Aberto a oportunidades internacionais remotas',
+        heroWork: 'Ver projetos', heroGithub: 'Perfil no GitHub', heroResume: 'Baixar currículo', availability: 'Fortaleza, Brasil · Aberto a oportunidades internacionais remotas',
         workEyebrow: 'Projeto em destaque', workTitle: 'Resultados acima de promessas.', workIntro: 'Um projeto público que mostra como penso sobre confiabilidade, segurança e experiência de desenvolvimento — da arquitetura aos testes e à documentação.',
         ticker1: '<b>01</b> APIs', ticker2: '<b>02</b> Automação', ticker3: '<b>03</b> Processamento de dados', ticker4: '<b>04</b> Infraestrutura em nuvem', ticker5: '<b>05</b> Produtos full-stack',
-        projectType: '01 / FERRAMENTA PARA DESENVOLVEDORES', prismCopy: 'Uma GitHub Action determinística que analisa pull requests em busca de sinais de risco antes da revisão humana. Ela identifica ausência de testes, diffs extensos, alterações de dependências e arquivos sensíveis à segurança — sem executar código não confiável do repositório.', exploreRepo: 'Explorar o repositório', riskScan: 'PR #142 · análise de risco', riskLevel: 'MÉDIO', finding1Title: 'Testes não alterados', finding1Copy: 'O código-fonte mudou sem arquivos de teste correspondentes.', finding2Title: 'Dependência atualizada', finding2Copy: 'package-lock.json exige revisão da cadeia de dependências.', finding3Title: 'Modelo de execução seguro', finding3Copy: 'O código do repositório não foi executado.',
+        projectType: '01 / FERRAMENTA PARA DESENVOLVEDORES', prismCopy: 'Uma GitHub Action determinística que analisa pull requests em busca de sinais de risco antes da revisão humana. Ela identifica ausência de testes, diffs extensos, alterações de dependências e arquivos sensíveis à segurança — sem executar código não confiável do repositório.', readCaseStudy: 'Ler o estudo de caso', exploreRepo: 'Explorar o repositório', riskScan: 'PR #142 · análise de risco', riskLevel: 'MÉDIO', finding1Title: 'Testes não alterados', finding1Copy: 'O código-fonte mudou sem arquivos de teste correspondentes.', finding2Title: 'Dependência atualizada', finding2Copy: 'package-lock.json exige revisão da cadeia de dependências.', finding3Title: 'Modelo de execução seguro', finding3Copy: 'O código do repositório não foi executado.',
         buildEyebrow: 'O que eu construo', buildTitle: 'De dados brutos a resultados confiáveis.', buildIntro: 'Meu trabalho mais forte está no encontro entre operações de negócio e software: movimentar dados com segurança, automatizar fluxos repetitivos e tornar sistemas mais fáceis de manter.',
         cap1Title: 'Engenharia de APIs', cap1Copy: 'Interfaces REST limpas, regras de negócio e integrações projetadas para comportamento previsível.', cap2Title: 'Fluxos de dados', cap2Copy: 'Pipelines de CSV, Excel, CNAB e arquivos grandes que validam, transformam e conciliam informações.', cap3Title: 'Automação', cap3Copy: 'Automações de portais e navegadores que eliminam etapas repetitivas de fluxos operacionais reais.', cap4Title: 'Extração de documentos', cap4Copy: 'Serviços de processamento de PDF que transformam documentos não estruturados em dados utilizáveis.', cap5Title: 'Entrega em nuvem', cap5Copy: 'Serviços AWS, ambientes Docker e padrões de infraestrutura que tornam implantações repetíveis.', cap6Title: 'Interfaces de produto', cap6Copy: 'Experiências responsivas em React e React Native conectadas a sistemas backend práticos.',
         experienceEyebrow: 'Experiência', quote: '“Software deve reduzir o atrito operacional — não apenas movê-lo para outro lugar.”', nowTime1: '2022 — ATUAL', nowTime2: '2023 — ATUAL', role1Title: 'Desenvolvedor Full-Stack · <strong>South Wind Solution</strong>', role1Copy: 'Desenvolvimento de aplicações web e mobile, integração de APIs, correção de problemas em produção, melhoria de experiências responsivas e transformação de necessidades de produto em software funcional.', role2Title: 'Infraestrutura em Nuvem · <strong>Projeto contratado</strong>', role2Copy: 'Desenvolvimento de infraestrutura com Terraform e AWS, conectando Lambdas em TypeScript, API Gateway, CloudWatch e DynamoDB.', role3Title: 'Desenvolvimento de Produto · <strong>Freelance</strong>', role3Copy: 'Entrega de fluxos de produto em React Native e correções de compatibilidade em ambientes Android e iOS.', role4Title: 'Análise e Desenvolvimento de Sistemas · <strong>Universidade de Fortaleza</strong>', role4Copy: 'Graduação tecnológica com foco em desenvolvimento de software e análise de sistemas.',
         stackEyebrow: 'Tecnologias', stackTitle: 'A tecnologia acompanha o problema.', stackIntro: 'Um conjunto multiplataforma voltado a entregas pragmáticas, código sustentável e automações úteis.',
-        contactEyebrow: 'Vamos construir algo útil', contactTitle: 'Procurando um engenheiro que conecta código a operações reais?', contactCopy: 'Estou aberto a oportunidades internacionais remotas em equipes de backend e produtos full-stack.', contactLinkedin: 'Conectar no LinkedIn', contactGithub: 'Ver meu código', footerLine: 'Construído com clareza, sem excessos.'
+        contactEyebrow: 'Vamos construir algo útil', contactTitle: 'Procurando um engenheiro que conecta código a operações reais?', contactCopy: 'Estou aberto a oportunidades internacionais remotas em equipes de backend e produtos full-stack.', contactEmail: 'Enviar um e-mail', contactLinkedin: 'Conectar no LinkedIn', contactGithub: 'Ver meu código', footerLine: 'Construído com clareza, sem excessos.'
       }
     };
 
