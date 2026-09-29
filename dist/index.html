@@ -66,6 +66,10 @@
     .nav-links { display: flex; align-items: center; gap: 1.5rem; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 600; }
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+    .language-switch { display: inline-flex; align-items: center; gap: .4rem; min-height: 38px; padding: .45rem .7rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: rgba(255,255,255,.025); cursor: pointer; font: 500 .76rem "DM Mono", monospace; }
+    .language-switch:hover, .language-switch:focus-visible { color: var(--ink); border-color: var(--muted); }
+    .language-switch .active { color: var(--accent); }
+    .language-switch .divider { opacity: .4; }
 
     .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .75rem 1.1rem; border: 1px solid var(--accent); border-radius: 999px; color: var(--bg); background: var(--accent); text-decoration: none; font-weight: 800; transition: transform .2s ease, background .2s ease; }
     .button:hover { transform: translateY(-2px); background: #dcff91; }
@@ -184,15 +188,16 @@
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skipLink">Skip to content</a>
   <header id="site-header">
     <nav class="wrap" aria-label="Primary navigation">
       <a class="brand" href="#top">gabriel<span>.</span>oliveira</a>
       <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#stack">Stack</a>
-        <a class="button nav-cta" href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">Let’s connect</a>
+        <a href="#work" data-i18n="navWork">Work</a>
+        <a href="#experience" data-i18n="navExperience">Experience</a>
+        <a href="#stack" data-i18n="navStack">Stack</a>
+        <button class="language-switch" id="language-switch" type="button" aria-label="Change language to Portuguese" title="Change language to Portuguese"><span class="active" data-lang-option="en">EN</span><span class="divider">/</span><span data-lang-option="pt">PT</span></button>
+        <a class="button nav-cta" href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer" data-i18n="navConnect">Let’s connect</a>
       </div>
     </nav>
   </header>
@@ -200,14 +205,14 @@
   <main id="main">
     <div class="wrap hero" id="top">
       <div>
-        <p class="eyebrow">Backend-focused full-stack developer</p>
-        <h1>I build systems that do the <em>hard work.</em></h1>
-        <p class="hero-copy">Reliable APIs, practical automations and data processing tools — built to turn complex operations into software people can trust.</p>
+        <p class="eyebrow" data-i18n="heroEyebrow">Backend-focused full-stack developer</p>
+        <h1 data-i18n-html="heroTitle">I build systems that do the <em>hard work.</em></h1>
+        <p class="hero-copy" data-i18n="heroCopy">Reliable APIs, practical automations and data processing tools — built to turn complex operations into software people can trust.</p>
         <div class="hero-actions">
-          <a class="button" href="#work">See selected work</a>
-          <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">GitHub profile</a>
+          <a class="button" href="#work" data-i18n="heroWork">See selected work</a>
+          <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer" data-i18n="heroGithub">GitHub profile</a>
         </div>
-        <p class="availability">Fortaleza, Brazil · Open to remote international roles</p>
+        <p class="availability" data-i18n="availability">Fortaleza, Brazil · Open to remote international roles</p>
       </div>
 
       <aside class="terminal" aria-label="Developer profile summary">
@@ -227,34 +232,34 @@
 
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <span><b>01</b> APIs</span><span><b>02</b> Automation</span><span><b>03</b> Data processing</span><span><b>04</b> Cloud infrastructure</span><span><b>05</b> Full-stack products</span>
-        <span><b>01</b> APIs</span><span><b>02</b> Automation</span><span><b>03</b> Data processing</span><span><b>04</b> Cloud infrastructure</span><span><b>05</b> Full-stack products</span>
+        <span data-i18n-html="ticker1"><b>01</b> APIs</span><span data-i18n-html="ticker2"><b>02</b> Automation</span><span data-i18n-html="ticker3"><b>03</b> Data processing</span><span data-i18n-html="ticker4"><b>04</b> Cloud infrastructure</span><span data-i18n-html="ticker5"><b>05</b> Full-stack products</span>
+        <span data-i18n-html="ticker1"><b>01</b> APIs</span><span data-i18n-html="ticker2"><b>02</b> Automation</span><span data-i18n-html="ticker3"><b>03</b> Data processing</span><span data-i18n-html="ticker4"><b>04</b> Cloud infrastructure</span><span data-i18n-html="ticker5"><b>05</b> Full-stack products</span>
       </div>
     </div>
 
     <section id="work">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Selected work</p><h2>Proof over promises.</h2></div>
-          <p class="section-intro">A public project that shows how I think about reliability, security and developer experience — from architecture to tests and documentation.</p>
+          <div><p class="eyebrow" data-i18n="workEyebrow">Selected work</p><h2 data-i18n="workTitle">Proof over promises.</h2></div>
+          <p class="section-intro" data-i18n="workIntro">A public project that shows how I think about reliability, security and developer experience — from architecture to tests and documentation.</p>
         </div>
 
         <article class="project reveal">
           <div class="project-copy">
             <div>
-              <span class="project-number">01 / DEVELOPER TOOL</span>
+              <span class="project-number" data-i18n="projectType">01 / DEVELOPER TOOL</span>
               <h3>Prism Review</h3>
-              <p>A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.</p>
+              <p data-i18n="prismCopy">A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.</p>
               <ul class="tags"><li>TypeScript</li><li>GitHub Actions</li><li>REST API</li><li>Security</li><li>Unit testing</li></ul>
             </div>
-            <a class="project-link" href="https://github.com/gabrielolvv/prism-review" target="_blank" rel="noreferrer">Explore the repository</a>
+            <a class="project-link" href="https://github.com/gabrielolvv/prism-review" target="_blank" rel="noreferrer" data-i18n="exploreRepo">Explore the repository</a>
           </div>
           <div class="risk-panel" aria-label="Illustration of a Prism Review report">
             <div class="risk-card">
-              <div class="risk-title"><span>PR #142 · risk scan</span><span class="risk-score">MEDIUM</span></div>
-              <div class="finding"><span class="finding-icon">!</span><div><h4>Missing test changes</h4><p>Source changed without matching test files.</p></div></div>
-              <div class="finding"><span class="finding-icon">+</span><div><h4>Dependency update</h4><p>package-lock.json requires supply-chain review.</p></div></div>
-              <div class="finding"><span class="finding-icon">✓</span><div><h4>Safe execution model</h4><p>Repository code was not executed.</p></div></div>
+              <div class="risk-title"><span data-i18n="riskScan">PR #142 · risk scan</span><span class="risk-score" data-i18n="riskLevel">MEDIUM</span></div>
+              <div class="finding"><span class="finding-icon">!</span><div><h4 data-i18n="finding1Title">Missing test changes</h4><p data-i18n="finding1Copy">Source changed without matching test files.</p></div></div>
+              <div class="finding"><span class="finding-icon">+</span><div><h4 data-i18n="finding2Title">Dependency update</h4><p data-i18n="finding2Copy">package-lock.json requires supply-chain review.</p></div></div>
+              <div class="finding"><span class="finding-icon">✓</span><div><h4 data-i18n="finding3Title">Safe execution model</h4><p data-i18n="finding3Copy">Repository code was not executed.</p></div></div>
             </div>
           </div>
         </article>
@@ -264,16 +269,16 @@
     <section aria-labelledby="what-i-build">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><p class="eyebrow">What I build</p><h2 id="what-i-build">From raw input to reliable output.</h2></div>
-          <p class="section-intro">My strongest work sits where business operations meet software: moving data safely, automating repetitive workflows and making systems easier to maintain.</p>
+          <div><p class="eyebrow" data-i18n="buildEyebrow">What I build</p><h2 id="what-i-build" data-i18n="buildTitle">From raw input to reliable output.</h2></div>
+          <p class="section-intro" data-i18n="buildIntro">My strongest work sits where business operations meet software: moving data safely, automating repetitive workflows and making systems easier to maintain.</p>
         </div>
         <div class="capabilities reveal">
-          <article class="capability"><span class="index">01</span><h3>API engineering</h3><p>Clean REST interfaces, business rules and integrations designed for predictable behavior.</p></article>
-          <article class="capability"><span class="index">02</span><h3>Data workflows</h3><p>CSV, Excel, CNAB and large-file pipelines that validate, transform and reconcile information.</p></article>
-          <article class="capability"><span class="index">03</span><h3>Automation</h3><p>Portal and browser automations that remove repetitive steps from real operational flows.</p></article>
-          <article class="capability"><span class="index">04</span><h3>Document extraction</h3><p>PDF processing services that turn unstructured documents into usable application data.</p></article>
-          <article class="capability"><span class="index">05</span><h3>Cloud delivery</h3><p>AWS services, Docker environments and infrastructure patterns that make deployment repeatable.</p></article>
-          <article class="capability"><span class="index">06</span><h3>Product interfaces</h3><p>Responsive React and React Native experiences connected to practical backend systems.</p></article>
+          <article class="capability"><span class="index">01</span><h3 data-i18n="cap1Title">API engineering</h3><p data-i18n="cap1Copy">Clean REST interfaces, business rules and integrations designed for predictable behavior.</p></article>
+          <article class="capability"><span class="index">02</span><h3 data-i18n="cap2Title">Data workflows</h3><p data-i18n="cap2Copy">CSV, Excel, CNAB and large-file pipelines that validate, transform and reconcile information.</p></article>
+          <article class="capability"><span class="index">03</span><h3 data-i18n="cap3Title">Automation</h3><p data-i18n="cap3Copy">Portal and browser automations that remove repetitive steps from real operational flows.</p></article>
+          <article class="capability"><span class="index">04</span><h3 data-i18n="cap4Title">Document extraction</h3><p data-i18n="cap4Copy">PDF processing services that turn unstructured documents into usable application data.</p></article>
+          <article class="capability"><span class="index">05</span><h3 data-i18n="cap5Title">Cloud delivery</h3><p data-i18n="cap5Copy">AWS services, Docker environments and infrastructure patterns that make deployment repeatable.</p></article>
+          <article class="capability"><span class="index">06</span><h3 data-i18n="cap6Title">Product interfaces</h3><p data-i18n="cap6Copy">Responsive React and React Native experiences connected to practical backend systems.</p></article>
         </div>
       </div>
     </section>
@@ -281,14 +286,14 @@
     <section id="experience">
       <div class="wrap experience-grid reveal">
         <div>
-          <p class="eyebrow">Experience</p>
-          <p class="quote">“Software should reduce operational friction — not move it somewhere else.”</p>
+          <p class="eyebrow" data-i18n="experienceEyebrow">Experience</p>
+          <p class="quote" data-i18n="quote">“Software should reduce operational friction — not move it somewhere else.”</p>
         </div>
         <div class="timeline">
-          <article class="role"><time>2022 — NOW</time><div><h3>Full-Stack Developer · <strong>South Wind Solution</strong></h3><p>Building web and mobile applications, integrating APIs, fixing production issues, improving responsive experiences and translating product needs into working software.</p></div></article>
-          <article class="role"><time>2023</time><div><h3>Cloud Infrastructure · <strong>Contract project</strong></h3><p>Developed infrastructure with Terraform and AWS, connecting TypeScript Lambdas, API Gateway, CloudWatch and DynamoDB.</p></div></article>
-          <article class="role"><time>2023 — NOW</time><div><h3>Product Development · <strong>Freelance</strong></h3><p>Delivered React Native product flows and compatibility fixes across Android and iOS environments.</p></div></article>
-          <article class="role"><time>2021 — 2023</time><div><h3>Systems Analysis & Development · <strong>University of Fortaleza</strong></h3><p>Technology degree focused on software development and systems analysis.</p></div></article>
+          <article class="role"><time data-i18n="nowTime1">2022 — NOW</time><div><h3 data-i18n-html="role1Title">Full-Stack Developer · <strong>South Wind Solution</strong></h3><p data-i18n="role1Copy">Building web and mobile applications, integrating APIs, fixing production issues, improving responsive experiences and translating product needs into working software.</p></div></article>
+          <article class="role"><time>2023</time><div><h3 data-i18n-html="role2Title">Cloud Infrastructure · <strong>Contract project</strong></h3><p data-i18n="role2Copy">Developed infrastructure with Terraform and AWS, connecting TypeScript Lambdas, API Gateway, CloudWatch and DynamoDB.</p></div></article>
+          <article class="role"><time data-i18n="nowTime2">2023 — NOW</time><div><h3 data-i18n-html="role3Title">Product Development · <strong>Freelance</strong></h3><p data-i18n="role3Copy">Delivered React Native product flows and compatibility fixes across Android and iOS environments.</p></div></article>
+          <article class="role"><time>2021 — 2023</time><div><h3 data-i18n-html="role4Title">Systems Analysis & Development · <strong>University of Fortaleza</strong></h3><p data-i18n="role4Copy">Technology degree focused on software development and systems analysis.</p></div></article>
         </div>
       </div>
     </section>
@@ -296,8 +301,8 @@
     <section id="stack">
       <div class="wrap">
         <div class="section-head reveal">
-          <div><p class="eyebrow">Toolbox</p><h2>The stack follows the problem.</h2></div>
-          <p class="section-intro">A cross-platform toolkit built around pragmatic delivery, maintainable code and useful automation.</p>
+          <div><p class="eyebrow" data-i18n="stackEyebrow">Toolbox</p><h2 data-i18n="stackTitle">The stack follows the problem.</h2></div>
+          <p class="section-intro" data-i18n="stackIntro">A cross-platform toolkit built around pragmatic delivery, maintainable code and useful automation.</p>
         </div>
         <div class="stack reveal">
           <div class="stack-group"><h3>Backend</h3><p>Node.js<br>TypeScript<br>PHP · Laravel<br>C# · .NET</p></div>
@@ -310,12 +315,12 @@
 
     <section class="contact reveal">
       <div class="wrap">
-        <p class="eyebrow">Let’s build something useful</p>
-        <h2>Looking for an engineer who connects code to real operations?</h2>
-        <p>I’m open to remote international opportunities across backend and full-stack product teams.</p>
+        <p class="eyebrow" data-i18n="contactEyebrow">Let’s build something useful</p>
+        <h2 data-i18n="contactTitle">Looking for an engineer who connects code to real operations?</h2>
+        <p data-i18n="contactCopy">I’m open to remote international opportunities across backend and full-stack product teams.</p>
         <div class="hero-actions">
-          <a class="button" href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
-          <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">Review my code</a>
+          <a class="button" href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer" data-i18n="contactLinkedin">Connect on LinkedIn</a>
+          <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer" data-i18n="contactGithub">Review my code</a>
         </div>
       </div>
     </section>
@@ -324,12 +329,63 @@
   <footer>
     <div class="wrap footer-inner">
       <span>© <span id="year"></span> Gabriel Oliveira</span>
-      <span class="mono">Built with clarity, not clutter.</span>
+      <span class="mono" data-i18n="footerLine">Built with clarity, not clutter.</span>
       <div class="footer-links"><a href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">LinkedIn</a></div>
     </div>
   </footer>
 
   <script>
+    const translations = {
+      en: {
+        skipLink: 'Skip to content', navWork: 'Work', navExperience: 'Experience', navStack: 'Stack', navConnect: 'Let’s connect',
+        heroEyebrow: 'Backend-focused full-stack developer', heroTitle: 'I build systems that do the <em>hard work.</em>',
+        heroCopy: 'Reliable APIs, practical automations and data processing tools — built to turn complex operations into software people can trust.',
+        heroWork: 'See selected work', heroGithub: 'GitHub profile', availability: 'Fortaleza, Brazil · Open to remote international roles',
+        workEyebrow: 'Selected work', workTitle: 'Proof over promises.', workIntro: 'A public project that shows how I think about reliability, security and developer experience — from architecture to tests and documentation.',
+        ticker1: '<b>01</b> APIs', ticker2: '<b>02</b> Automation', ticker3: '<b>03</b> Data processing', ticker4: '<b>04</b> Cloud infrastructure', ticker5: '<b>05</b> Full-stack products',
+        projectType: '01 / DEVELOPER TOOL', prismCopy: 'A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.', exploreRepo: 'Explore the repository', riskScan: 'PR #142 · risk scan', riskLevel: 'MEDIUM', finding1Title: 'Missing test changes', finding1Copy: 'Source changed without matching test files.', finding2Title: 'Dependency update', finding2Copy: 'package-lock.json requires supply-chain review.', finding3Title: 'Safe execution model', finding3Copy: 'Repository code was not executed.',
+        buildEyebrow: 'What I build', buildTitle: 'From raw input to reliable output.', buildIntro: 'My strongest work sits where business operations meet software: moving data safely, automating repetitive workflows and making systems easier to maintain.',
+        cap1Title: 'API engineering', cap1Copy: 'Clean REST interfaces, business rules and integrations designed for predictable behavior.', cap2Title: 'Data workflows', cap2Copy: 'CSV, Excel, CNAB and large-file pipelines that validate, transform and reconcile information.', cap3Title: 'Automation', cap3Copy: 'Portal and browser automations that remove repetitive steps from real operational flows.', cap4Title: 'Document extraction', cap4Copy: 'PDF processing services that turn unstructured documents into usable application data.', cap5Title: 'Cloud delivery', cap5Copy: 'AWS services, Docker environments and infrastructure patterns that make deployment repeatable.', cap6Title: 'Product interfaces', cap6Copy: 'Responsive React and React Native experiences connected to practical backend systems.',
+        experienceEyebrow: 'Experience', quote: '“Software should reduce operational friction — not move it somewhere else.”', nowTime1: '2022 — NOW', nowTime2: '2023 — NOW', role1Title: 'Full-Stack Developer · <strong>South Wind Solution</strong>', role1Copy: 'Building web and mobile applications, integrating APIs, fixing production issues, improving responsive experiences and translating product needs into working software.', role2Title: 'Cloud Infrastructure · <strong>Contract project</strong>', role2Copy: 'Developed infrastructure with Terraform and AWS, connecting TypeScript Lambdas, API Gateway, CloudWatch and DynamoDB.', role3Title: 'Product Development · <strong>Freelance</strong>', role3Copy: 'Delivered React Native product flows and compatibility fixes across Android and iOS environments.', role4Title: 'Systems Analysis & Development · <strong>University of Fortaleza</strong>', role4Copy: 'Technology degree focused on software development and systems analysis.',
+        stackEyebrow: 'Toolbox', stackTitle: 'The stack follows the problem.', stackIntro: 'A cross-platform toolkit built around pragmatic delivery, maintainable code and useful automation.',
+        contactEyebrow: 'Let’s build something useful', contactTitle: 'Looking for an engineer who connects code to real operations?', contactCopy: 'I’m open to remote international opportunities across backend and full-stack product teams.', contactLinkedin: 'Connect on LinkedIn', contactGithub: 'Review my code', footerLine: 'Built with clarity, not clutter.'
+      },
+      pt: {
+        skipLink: 'Pular para o conteúdo', navWork: 'Projetos', navExperience: 'Experiência', navStack: 'Tecnologias', navConnect: 'Vamos conversar',
+        heroEyebrow: 'Desenvolvedor full-stack com foco em backend', heroTitle: 'Eu crio sistemas que fazem o <em>trabalho pesado.</em>',
+        heroCopy: 'APIs confiáveis, automações práticas e ferramentas de processamento de dados — construídas para transformar operações complexas em software no qual as pessoas podem confiar.',
+        heroWork: 'Ver projetos', heroGithub: 'Perfil no GitHub', availability: 'Fortaleza, Brasil · Aberto a oportunidades internacionais remotas',
+        workEyebrow: 'Projeto em destaque', workTitle: 'Resultados acima de promessas.', workIntro: 'Um projeto público que mostra como penso sobre confiabilidade, segurança e experiência de desenvolvimento — da arquitetura aos testes e à documentação.',
+        ticker1: '<b>01</b> APIs', ticker2: '<b>02</b> Automação', ticker3: '<b>03</b> Processamento de dados', ticker4: '<b>04</b> Infraestrutura em nuvem', ticker5: '<b>05</b> Produtos full-stack',
+        projectType: '01 / FERRAMENTA PARA DESENVOLVEDORES', prismCopy: 'Uma GitHub Action determinística que analisa pull requests em busca de sinais de risco antes da revisão humana. Ela identifica ausência de testes, diffs extensos, alterações de dependências e arquivos sensíveis à segurança — sem executar código não confiável do repositório.', exploreRepo: 'Explorar o repositório', riskScan: 'PR #142 · análise de risco', riskLevel: 'MÉDIO', finding1Title: 'Testes não alterados', finding1Copy: 'O código-fonte mudou sem arquivos de teste correspondentes.', finding2Title: 'Dependência atualizada', finding2Copy: 'package-lock.json exige revisão da cadeia de dependências.', finding3Title: 'Modelo de execução seguro', finding3Copy: 'O código do repositório não foi executado.',
+        buildEyebrow: 'O que eu construo', buildTitle: 'De dados brutos a resultados confiáveis.', buildIntro: 'Meu trabalho mais forte está no encontro entre operações de negócio e software: movimentar dados com segurança, automatizar fluxos repetitivos e tornar sistemas mais fáceis de manter.',
+        cap1Title: 'Engenharia de APIs', cap1Copy: 'Interfaces REST limpas, regras de negócio e integrações projetadas para comportamento previsível.', cap2Title: 'Fluxos de dados', cap2Copy: 'Pipelines de CSV, Excel, CNAB e arquivos grandes que validam, transformam e conciliam informações.', cap3Title: 'Automação', cap3Copy: 'Automações de portais e navegadores que eliminam etapas repetitivas de fluxos operacionais reais.', cap4Title: 'Extração de documentos', cap4Copy: 'Serviços de processamento de PDF que transformam documentos não estruturados em dados utilizáveis.', cap5Title: 'Entrega em nuvem', cap5Copy: 'Serviços AWS, ambientes Docker e padrões de infraestrutura que tornam implantações repetíveis.', cap6Title: 'Interfaces de produto', cap6Copy: 'Experiências responsivas em React e React Native conectadas a sistemas backend práticos.',
+        experienceEyebrow: 'Experiência', quote: '“Software deve reduzir o atrito operacional — não apenas movê-lo para outro lugar.”', nowTime1: '2022 — ATUAL', nowTime2: '2023 — ATUAL', role1Title: 'Desenvolvedor Full-Stack · <strong>South Wind Solution</strong>', role1Copy: 'Desenvolvimento de aplicações web e mobile, integração de APIs, correção de problemas em produção, melhoria de experiências responsivas e transformação de necessidades de produto em software funcional.', role2Title: 'Infraestrutura em Nuvem · <strong>Projeto contratado</strong>', role2Copy: 'Desenvolvimento de infraestrutura com Terraform e AWS, conectando Lambdas em TypeScript, API Gateway, CloudWatch e DynamoDB.', role3Title: 'Desenvolvimento de Produto · <strong>Freelance</strong>', role3Copy: 'Entrega de fluxos de produto em React Native e correções de compatibilidade em ambientes Android e iOS.', role4Title: 'Análise e Desenvolvimento de Sistemas · <strong>Universidade de Fortaleza</strong>', role4Copy: 'Graduação tecnológica com foco em desenvolvimento de software e análise de sistemas.',
+        stackEyebrow: 'Tecnologias', stackTitle: 'A tecnologia acompanha o problema.', stackIntro: 'Um conjunto multiplataforma voltado a entregas pragmáticas, código sustentável e automações úteis.',
+        contactEyebrow: 'Vamos construir algo útil', contactTitle: 'Procurando um engenheiro que conecta código a operações reais?', contactCopy: 'Estou aberto a oportunidades internacionais remotas em equipes de backend e produtos full-stack.', contactLinkedin: 'Conectar no LinkedIn', contactGithub: 'Ver meu código', footerLine: 'Construído com clareza, sem excessos.'
+      }
+    };
+
+    const languageSwitch = document.getElementById('language-switch');
+    const setLanguage = (language) => {
+      const dictionary = translations[language];
+      document.documentElement.lang = language === 'pt' ? 'pt-BR' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach(element => { element.textContent = dictionary[element.dataset.i18n]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(element => { element.innerHTML = dictionary[element.dataset.i18nHtml]; });
+      document.querySelectorAll('[data-lang-option]').forEach(element => element.classList.toggle('active', element.dataset.langOption === language));
+      document.title = language === 'pt' ? 'Gabriel Oliveira — Desenvolvedor Full-Stack' : 'Gabriel Oliveira — Full-Stack Developer';
+      document.querySelector('meta[name="description"]').setAttribute('content', language === 'pt' ? 'Gabriel Oliveira é um desenvolvedor full-stack com foco em backend, APIs confiáveis, automações e processamento de dados.' : 'Gabriel Oliveira is a backend-focused full-stack developer building reliable APIs, automations and data processing systems.');
+      document.querySelector('nav').setAttribute('aria-label', language === 'pt' ? 'Navegação principal' : 'Primary navigation');
+      const nextLanguage = language === 'en' ? 'Portuguese' : 'English';
+      languageSwitch.setAttribute('aria-label', `Change language to ${nextLanguage}`);
+      languageSwitch.setAttribute('title', `Change language to ${nextLanguage}`);
+      localStorage.setItem('portfolio-language', language);
+    };
+
+    const preferredLanguage = localStorage.getItem('portfolio-language') === 'pt' ? 'pt' : 'en';
+    setLanguage(preferredLanguage);
+    languageSwitch.addEventListener('click', () => setLanguage(document.documentElement.lang === 'en' ? 'pt' : 'en'));
+
     document.getElementById('year').textContent = new Date().getFullYear();
     const header = document.getElementById('site-header');
     const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
