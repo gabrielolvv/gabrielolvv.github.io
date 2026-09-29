@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gabriel Oliveira is a backend-focused full-stack developer building reliable APIs, automations and data processing systems.">
+  <meta name="theme-color" content="#07110e">
+  <title>Gabriel Oliveira — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307110e'/%3E%3Cpath d='M17 20h30v8H27v8h16v8H17z' fill='%23c9ff5b'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #07110e;
+      --surface: #0d1915;
+      --surface-2: #12211b;
+      --ink: #f2f7f1;
+      --muted: #9aa9a1;
+      --line: rgba(220, 240, 226, .14);
+      --accent: #c9ff5b;
+      --accent-2: #6ee7c2;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 80% -10%, rgba(110, 231, 194, .14), transparent 28rem),
+        var(--bg);
+      font-family: "Manrope", sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .35;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 75%);
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    .wrap { width: min(calc(100% - 2rem), var(--max)); margin-inline: auto; }
+    .mono { font-family: "DM Mono", monospace; }
+    .eyebrow { margin: 0 0 1rem; color: var(--accent-2); font: 500 .78rem/1.4 "DM Mono", monospace; letter-spacing: .12em; text-transform: uppercase; }
+
+    .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; padding: .75rem 1rem; background: var(--accent); color: var(--bg); }
+    .skip-link:focus { top: 1rem; }
+
+    header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid transparent; backdrop-filter: blur(18px); transition: .25s ease; }
+    header.scrolled { background: rgba(7, 17, 14, .84); border-color: var(--line); }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .brand { text-decoration: none; font: 500 .92rem "DM Mono", monospace; letter-spacing: -.03em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .9rem; font-weight: 600; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: .75rem 1.1rem; border: 1px solid var(--accent); border-radius: 999px; color: var(--bg); background: var(--accent); text-decoration: none; font-weight: 800; transition: transform .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-2px); background: #dcff91; }
+    .button.secondary { color: var(--ink); background: transparent; border-color: var(--line); }
+    .button.secondary:hover { border-color: var(--muted); background: rgba(255,255,255,.03); }
+
+    main { overflow: hidden; }
+    .hero { min-height: calc(100vh - 72px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, .75fr); align-items: center; gap: clamp(2rem, 7vw, 7rem); padding: 5rem 0 4rem; }
+    h1 { max-width: 820px; margin: 0; font-size: clamp(3.1rem, 8vw, 7.7rem); line-height: .91; letter-spacing: -.075em; font-weight: 800; }
+    h1 em { color: var(--accent); font-style: normal; }
+    .hero-copy { max-width: 680px; margin: 2rem 0; color: #c2cec7; font-size: clamp(1.08rem, 2vw, 1.3rem); line-height: 1.6; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .availability { display: flex; align-items: center; gap: .65rem; margin: 1.5rem 0 0; color: var(--muted); font-size: .9rem; }
+    .availability::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 5px rgba(110,231,194,.1); }
+
+    .terminal { border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: rgba(13, 25, 21, .85); box-shadow: 0 28px 80px rgba(0,0,0,.32); transform: rotate(1.5deg); }
+    .terminal-top { display: flex; gap: .4rem; padding: 1rem; border-bottom: 1px solid var(--line); }
+    .terminal-top i { width: 9px; height: 9px; border-radius: 50%; background: #415149; }
+    .terminal-body { padding: 1.4rem; font: 400 .82rem/1.8 "DM Mono", monospace; color: #bdc9c2; }
+    .terminal-body p { margin: .15rem 0; }
+    .terminal-body .prompt, .terminal-body .ok { color: var(--accent); }
+    .terminal-body .key { color: var(--accent-2); }
+    .terminal-body .indent { padding-left: 1.1rem; }
+
+    .ticker { overflow: hidden; border-block: 1px solid var(--line); background: rgba(255,255,255,.018); }
+    .ticker-track { display: flex; width: max-content; animation: ticker 28s linear infinite; }
+    .ticker span { padding: 1.2rem 2rem; color: #b5c0ba; font: 400 .82rem "DM Mono", monospace; }
+    .ticker b { color: var(--accent); font-weight: 400; }
+    @keyframes ticker { to { transform: translateX(-50%); } }
+
+    section { padding: clamp(5rem, 10vw, 9rem) 0; }
+    .section-head { display: grid; grid-template-columns: .6fr 1.4fr; align-items: end; gap: 2rem; margin-bottom: 3.5rem; }
+    h2 { margin: 0; font-size: clamp(2.35rem, 5vw, 4.8rem); line-height: 1; letter-spacing: -.055em; }
+    .section-intro { max-width: 620px; margin: 0 0 .4rem auto; color: var(--muted); font-size: 1.05rem; }
+
+    .project { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 530px; border: 1px solid var(--line); border-radius: 28px; overflow: hidden; background: var(--surface); }
+    .project-copy { padding: clamp(2rem, 5vw, 4rem); display: flex; flex-direction: column; justify-content: space-between; }
+    .project-number { color: var(--muted); font: 400 .78rem "DM Mono", monospace; }
+    .project h3 { margin: 1.4rem 0 1rem; font-size: clamp(2.2rem, 5vw, 4.3rem); line-height: .98; letter-spacing: -.055em; }
+    .project p { color: #b8c6be; max-width: 560px; }
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1.5rem 0 2rem; list-style: none; }
+    .tags li { padding: .5rem .75rem; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font: 400 .72rem "DM Mono", monospace; }
+    .project-link { width: fit-content; color: var(--accent); text-underline-offset: .35rem; text-decoration-thickness: 1px; font-weight: 700; }
+
+    .risk-panel { position: relative; display: grid; place-items: center; padding: 2rem; background: radial-gradient(circle at 50% 20%, rgba(201,255,91,.12), transparent 55%), #0a1511; }
+    .risk-card { width: min(100%, 390px); padding: 1.4rem; border: 1px solid rgba(201,255,91,.28); border-radius: 18px; background: rgba(7,17,14,.92); box-shadow: 0 30px 70px rgba(0,0,0,.38); }
+    .risk-title { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--line); font: 500 .8rem "DM Mono", monospace; }
+    .risk-score { color: #ffd166; }
+    .finding { display: grid; grid-template-columns: auto 1fr; gap: .8rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .finding:last-child { border: 0; padding-bottom: 0; }
+    .finding-icon { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; color: var(--bg); background: var(--accent); font-weight: 900; }
+    .finding h4 { margin: 0 0 .2rem; font-size: .88rem; }
+    .finding p { margin: 0; color: var(--muted); font: 400 .72rem/1.55 "DM Mono", monospace; }
+
+    .capabilities { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .capability { min-height: 260px; padding: 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(13,25,21,.55); }
+    .capability .index { color: var(--accent-2); font: 400 .75rem "DM Mono", monospace; }
+    .capability h3 { margin: 3.2rem 0 .8rem; font-size: 1.35rem; letter-spacing: -.03em; }
+    .capability p { margin: 0; color: var(--muted); font-size: .94rem; }
+
+    .experience-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 4rem; }
+    .quote { margin: 0; color: var(--accent); font-size: clamp(1.6rem, 3vw, 2.5rem); line-height: 1.2; letter-spacing: -.04em; }
+    .timeline { border-top: 1px solid var(--line); }
+    .role { display: grid; grid-template-columns: 120px 1fr; gap: 1.5rem; padding: 2rem 0; border-bottom: 1px solid var(--line); }
+    .role time { color: var(--muted); font: 400 .75rem/1.5 "DM Mono", monospace; }
+    .role h3 { margin: 0 0 .25rem; font-size: 1.2rem; }
+    .role strong { color: var(--accent-2); font-weight: 600; }
+    .role p { margin: .8rem 0 0; color: var(--muted); font-size: .95rem; }
+
+    .stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; background: var(--line); }
+    .stack-group { padding: 1.7rem; background: var(--surface); }
+    .stack-group h3 { margin: 0 0 1.4rem; color: var(--accent-2); font: 500 .75rem "DM Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .stack-group p { margin: 0; color: #ccd6d0; line-height: 2; font-size: .95rem; }
+
+    .contact { text-align: center; padding-bottom: 7rem; }
+    .contact h2 { max-width: 900px; margin: 0 auto 1.5rem; }
+    .contact p { max-width: 600px; margin: 0 auto 2rem; color: var(--muted); font-size: 1.08rem; }
+    .contact .hero-actions { justify-content: center; }
+
+    footer { border-top: 1px solid var(--line); }
+    .footer-inner { min-height: 110px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .82rem; }
+    .footer-links { display: flex; gap: 1rem; }
+    .footer-links a { text-underline-offset: .25rem; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 850px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero, .project, .section-head, .experience-grid { grid-template-columns: 1fr; }
+      .hero { min-height: auto; padding-top: 4rem; }
+      .terminal { max-width: 520px; transform: none; }
+      .section-intro { margin-left: 0; }
+      .capabilities { grid-template-columns: 1fr 1fr; }
+      .stack { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 1.25rem), var(--max)); }
+      nav { min-height: 64px; }
+      .nav-cta { display: none; }
+      h1 { font-size: clamp(3rem, 16vw, 4.7rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-actions .button { width: 100%; }
+      .capabilities, .stack { grid-template-columns: 1fr; }
+      .capability { min-height: 220px; }
+      .role { grid-template-columns: 1fr; gap: .5rem; }
+      .footer-inner { flex-direction: column; justify-content: center; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header id="site-header">
+    <nav class="wrap" aria-label="Primary navigation">
+      <a class="brand" href="#top">gabriel<span>.</span>oliveira</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#stack">Stack</a>
+        <a class="button nav-cta" href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">Let’s connect</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap hero" id="top">
+      <div>
+        <p class="eyebrow">Backend-focused full-stack developer</p>
+        <h1>I build systems that do the <em>hard work.</em></h1>
+        <p class="hero-copy">Reliable APIs, practical automations and data processing tools — built to turn complex operations into software people can trust.</p>
+        <div class="hero-actions">
+          <a class="button" href="#work">See selected work</a>
+          <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">GitHub profile</a>
+        </div>
+        <p class="availability">Fortaleza, Brazil · Open to remote international roles</p>
+      </div>
+
+      <aside class="terminal" aria-label="Developer profile summary">
+        <div class="terminal-top"><i></i><i></i><i></i></div>
+        <div class="terminal-body">
+          <p><span class="prompt">$</span> profile --summary</p>
+          <p class="indent"><span class="key">role:</span> full-stack / backend</p>
+          <p class="indent"><span class="key">focus:</span> APIs, automation, data</p>
+          <p class="indent"><span class="key">runtime:</span> Node.js, .NET, Laravel</p>
+          <p class="indent"><span class="key">frontend:</span> React, React Native</p>
+          <p class="indent"><span class="key">cloud:</span> AWS, Docker</p>
+          <p><span class="prompt">$</span> status</p>
+          <p class="ok">✓ ready for the next challenge</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span><b>01</b> APIs</span><span><b>02</b> Automation</span><span><b>03</b> Data processing</span><span><b>04</b> Cloud infrastructure</span><span><b>05</b> Full-stack products</span>
+        <span><b>01</b> APIs</span><span><b>02</b> Automation</span><span><b>03</b> Data processing</span><span><b>04</b> Cloud infrastructure</span><span><b>05</b> Full-stack products</span>
+      </div>
+    </div>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Selected work</p><h2>Proof over promises.</h2></div>
+          <p class="section-intro">A public project that shows how I think about reliability, security and developer experience — from architecture to tests and documentation.</p>
+        </div>
+
+        <article class="project reveal">
+          <div class="project-copy">
+            <div>
+              <span class="project-number">01 / DEVELOPER TOOL</span>
+              <h3>Prism Review</h3>
+              <p>A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.</p>
+              <ul class="tags"><li>TypeScript</li><li>GitHub Actions</li><li>REST API</li><li>Security</li><li>Unit testing</li></ul>
+            </div>
+            <a class="project-link" href="https://github.com/gabrielolvv/prism-review" target="_blank" rel="noreferrer">Explore the repository</a>
+          </div>
+          <div class="risk-panel" aria-label="Illustration of a Prism Review report">
+            <div class="risk-card">
+              <div class="risk-title"><span>PR #142 · risk scan</span><span class="risk-score">MEDIUM</span></div>
+              <div class="finding"><span class="finding-icon">!</span><div><h4>Missing test changes</h4><p>Source changed without matching test files.</p></div></div>
+              <div class="finding"><span class="finding-icon">+</span><div><h4>Dependency update</h4><p>package-lock.json requires supply-chain review.</p></div></div>
+              <div class="finding"><span class="finding-icon">✓</span><div><h4>Safe execution model</h4><p>Repository code was not executed.</p></div></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="what-i-build">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">What I build</p><h2 id="what-i-build">From raw input to reliable output.</h2></div>
+          <p class="section-intro">My strongest work sits where business operations meet software: moving data safely, automating repetitive workflows and making systems easier to maintain.</p>
+        </div>
+        <div class="capabilities reveal">
+          <article class="capability"><span class="index">01</span><h3>API engineering</h3><p>Clean REST interfaces, business rules and integrations designed for predictable behavior.</p></article>
+          <article class="capability"><span class="index">02</span><h3>Data workflows</h3><p>CSV, Excel, CNAB and large-file pipelines that validate, transform and reconcile information.</p></article>
+          <article class="capability"><span class="index">03</span><h3>Automation</h3><p>Portal and browser automations that remove repetitive steps from real operational flows.</p></article>
+          <article class="capability"><span class="index">04</span><h3>Document extraction</h3><p>PDF processing services that turn unstructured documents into usable application data.</p></article>
+          <article class="capability"><span class="index">05</span><h3>Cloud delivery</h3><p>AWS services, Docker environments and infrastructure patterns that make deployment repeatable.</p></article>
+          <article class="capability"><span class="index">06</span><h3>Product interfaces</h3><p>Responsive React and React Native experiences connected to practical backend systems.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="wrap experience-grid reveal">
+        <div>
+          <p class="eyebrow">Experience</p>
+          <p class="quote">“Software should reduce operational friction — not move it somewhere else.”</p>
+        </div>
+        <div class="timeline">
+          <article class="role"><time>2022 — NOW</time><div><h3>Full-Stack Developer · <strong>South Wind Solution</strong></h3><p>Building web and mobile applications, integrating APIs, fixing production issues, improving responsive experiences and translating product needs into working software.</p></div></article>
+          <article class="role"><time>2023</time><div><h3>Cloud Infrastructure · <strong>Contract project</strong></h3><p>Developed infrastructure with Terraform and AWS, connecting TypeScript Lambdas, API Gateway, CloudWatch and DynamoDB.</p></div></article>
+          <article class="role"><time>2023 — NOW</time><div><h3>Product Development · <strong>Freelance</strong></h3><p>Delivered React Native product flows and compatibility fixes across Android and iOS environments.</p></div></article>
+          <article class="role"><time>2021 — 2023</time><div><h3>Systems Analysis & Development · <strong>University of Fortaleza</strong></h3><p>Technology degree focused on software development and systems analysis.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><p class="eyebrow">Toolbox</p><h2>The stack follows the problem.</h2></div>
+          <p class="section-intro">A cross-platform toolkit built around pragmatic delivery, maintainable code and useful automation.</p>
+        </div>
+        <div class="stack reveal">
+          <div class="stack-group"><h3>Backend</h3><p>Node.js<br>TypeScript<br>PHP · Laravel<br>C# · .NET</p></div>
+          <div class="stack-group"><h3>Frontend</h3><p>React<br>React Native<br>JavaScript<br>Responsive UI</p></div>
+          <div class="stack-group"><h3>Data</h3><p>MySQL<br>CSV · Excel<br>PDF extraction<br>CNAB processing</p></div>
+          <div class="stack-group"><h3>Platform</h3><p>Docker<br>AWS · S3<br>Terraform<br>Git · REST APIs</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact reveal">
+      <div class="wrap">
+        <p class="eyebrow">Let’s build something useful</p>
+        <h2>Looking for an engineer who connects code to real operations?</h2>
+        <p>I’m open to remote international opportunities across backend and full-stack product teams.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+          <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">Review my code</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Gabriel Oliveira</span>
+      <span class="mono">Built with clarity, not clutter.</span>
+      <div class="footer-links"><a href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/gabrielolvv/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const header = document.getElementById('site-header');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
