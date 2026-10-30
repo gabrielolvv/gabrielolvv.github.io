@@ -27,6 +27,16 @@ python -m http.server 8000 --directory dist
 
 Depois abra http://localhost:8000.
 
+## Currículo
+
+O `dist/resume.pdf` é gerado por [`scripts/build_resume.py`](scripts/build_resume.py).
+Para atualizar, edite o conteúdo no script e rode:
+
+```bash
+pip install reportlab
+python scripts/build_resume.py
+```
+
 ## Deploy
 
 Todo push na `main` publica a pasta `dist/` no GitHub Pages pelo workflow
