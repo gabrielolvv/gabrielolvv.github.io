@@ -97,7 +97,7 @@ def build():
         skill("Backend", "Node.js, TypeScript, JavaScript, PHP, Laravel, C#, .NET and REST APIs"),
         skill("Frontend", "React, React Native and responsive web and mobile interfaces"),
         skill("Desktop", "C# and .NET Windows apps, WinForms, Win32 APIs, FFmpeg and NSIS installers"),
-        skill("Data", "MySQL, CSV and Excel processing, PDF extraction and CNAB workflows"),
+        skill("Data", "PostgreSQL, MySQL, CSV and Excel processing, PDF extraction and CNAB workflows"),
         skill("Cloud and Tools", "AWS, S3, Lambda, API Gateway, CloudWatch, DynamoDB, Docker, Terraform, GitHub Actions and Git"),
         Paragraph("PROFESSIONAL EXPERIENCE", section_style),
         *entry("Full-Stack Developer", "South Wind Solution", "2022 - Present", [
