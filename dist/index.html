@@ -7,14 +7,34 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Gabriel Oliveira — Backend-focused Full-Stack Developer">
   <meta property="og:description" content="Reliable APIs, practical automations and data processing tools.">
-  <meta property="og:image" content="https://gabriel-oliveira-engineer.gabrieloliv-dev.chatgpt.site/og.png">
-  <meta property="og:url" content="https://gabriel-oliveira-engineer.gabrieloliv-dev.chatgpt.site/">
+  <meta property="og:image" content="https://gabrielolvv.github.io/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gabriel Oliveira — Backend-focused Full-Stack Developer">
+  <meta property="og:url" content="https://gabrielolvv.github.io/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Gabriel Oliveira — Backend-focused Full-Stack Developer">
   <meta name="twitter:description" content="Reliable APIs, practical automations and data processing tools.">
-  <meta name="twitter:image" content="https://gabriel-oliveira-engineer.gabrieloliv-dev.chatgpt.site/og.png">
+  <meta name="twitter:image" content="https://gabrielolvv.github.io/og.jpg">
   <meta name="theme-color" content="#07110e">
+  <link rel="canonical" href="https://gabrielolvv.github.io/">
   <title>Gabriel Oliveira — Full-Stack Developer</title>
+  <script>document.documentElement.classList.add('js');</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gabriel Oliveira",
+      "jobTitle": "Backend-focused Full-Stack Developer",
+      "url": "https://gabrielolvv.github.io/",
+      "email": "mailto:gabrieloliv.dev@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Fortaleza", "addressCountry": "BR" },
+      "sameAs": ["https://github.com/gabrielolvv", "https://www.linkedin.com/in/gabrielolvv/"],
+      "knowsAbout": ["Node.js", "TypeScript", "C#", ".NET", "PHP", "Laravel", "React", "React Native", "AWS", "Docker", "Terraform"]
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -155,6 +175,14 @@
     .finding h4 { margin: 0 0 .2rem; font-size: .88rem; }
     .finding p { margin: 0; color: var(--muted); font: 400 .72rem/1.55 "DM Mono", monospace; }
 
+    .more-projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .mini-project { display: flex; flex-direction: column; padding: clamp(1.6rem, 4vw, 2.6rem); border: 1px solid var(--line); border-radius: 24px; background: var(--surface); transition: border-color .3s ease, transform .3s ease, box-shadow .3s ease; }
+    .mini-project:hover { border-color: rgba(110,231,194,.28); transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,.22); }
+    .mini-project h3 { margin: 1.1rem 0 .8rem; font-size: clamp(1.9rem, 3.6vw, 2.7rem); line-height: 1; letter-spacing: -.05em; }
+    .mini-project p { margin: 0; color: #b8c6be; }
+    .mini-project .tags { margin: 1.4rem 0 1.8rem; }
+    .mini-project .project-links { margin-top: auto; }
+
     .capabilities { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
     .capability { position: relative; min-height: 260px; padding: 2rem; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(13,25,21,.55); transition: transform .28s ease, background .28s ease, box-shadow .28s ease; }
     .capability::after { content: ""; position: absolute; left: 2rem; right: 2rem; bottom: 1.2rem; height: 1px; background: linear-gradient(90deg, var(--accent), transparent); transform: scaleX(0); transform-origin: left; transition: transform .35s ease; }
@@ -188,15 +216,15 @@
     .footer-links { display: flex; gap: 1rem; }
     .footer-links a { text-underline-offset: .25rem; }
 
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: none; }
+    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .js .reveal.visible { opacity: 1; transform: none; }
 
     @keyframes blink { 0%, 48%, 100% { opacity: 1; } 49%, 55% { opacity: .18; } }
     @keyframes glowPulse { 0%, 100% { text-shadow: 0 0 34px rgba(201,255,91,.08); } 50% { text-shadow: 0 0 56px rgba(201,255,91,.23); } }
 
     @media (max-width: 850px) {
       .nav-links a:not(.nav-cta) { display: none; }
-      .hero, .project, .section-head, .experience-grid { grid-template-columns: 1fr; }
+      .hero, .project, .section-head, .experience-grid, .more-projects { grid-template-columns: 1fr; }
       .hero { min-height: auto; padding-top: 4rem; }
       .terminal { max-width: 520px; transform: none; }
       .section-intro { margin-left: 0; }
@@ -220,7 +248,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-      .reveal { opacity: 1; transform: none; }
+      .js .reveal { opacity: 1; transform: none; }
       .terminal, .risk-card { transform: none !important; }
       body::after { display: none; }
     }
@@ -251,7 +279,7 @@
         <div class="hero-actions">
           <a class="button" href="#work" data-i18n="heroWork">See selected work</a>
           <a class="button secondary" href="https://github.com/gabrielolvv" target="_blank" rel="noreferrer" data-i18n="heroGithub">GitHub profile</a>
-          <a class="button secondary" href="/resume.pdf" target="_blank" rel="noreferrer" data-i18n="heroResume">Download résumé</a>
+          <a class="button secondary" href="resume.pdf" target="_blank" rel="noreferrer" data-i18n="heroResume">Download résumé</a>
         </div>
         <p class="availability" data-i18n="availability">Fortaleza, Brazil · Open to remote international roles</p>
       </div>
@@ -282,7 +310,7 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div><p class="eyebrow" data-i18n="workEyebrow">Selected work</p><h2 data-i18n="workTitle">Proof over promises.</h2></div>
-          <p class="section-intro" data-i18n="workIntro">A public project that shows how I think about reliability, security and developer experience — from architecture to tests and documentation.</p>
+          <p class="section-intro" data-i18n="workIntro">Public projects that show how I think about reliability, security and developer experience — from architecture to tests and documentation.</p>
         </div>
 
         <article class="project reveal">
@@ -294,7 +322,7 @@
               <ul class="tags"><li>TypeScript</li><li>GitHub Actions</li><li>REST API</li><li>Security</li><li>Unit testing</li></ul>
             </div>
             <div class="project-links">
-              <a class="project-link" href="/prism-review/" data-i18n="readCaseStudy">Read the case study</a>
+              <a class="project-link" href="prism-review/" data-i18n="readCaseStudy">Read the case study</a>
               <a class="project-link" href="https://github.com/gabrielolvv/prism-review" target="_blank" rel="noreferrer" data-i18n="exploreRepo">Explore the repository</a>
             </div>
           </div>
@@ -307,6 +335,29 @@
             </div>
           </div>
         </article>
+
+        <div class="more-projects">
+          <article class="mini-project reveal">
+            <span class="project-number" data-i18n="ghostclipType">02 / DESKTOP APP</span>
+            <h3>Ghostclip</h3>
+            <p data-i18n="ghostclipCopy">An open-source instant replay recorder for Windows that keeps the last minute of gameplay and saves it on a hotkey. Nothing runs inside the game: capture uses Desktop Duplication, encoding runs on the GPU and a supervised worker process restarts on failure without losing the buffer.</p>
+            <ul class="tags"><li>C#</li><li>.NET</li><li>FFmpeg</li><li>WASAPI</li><li>Windows</li></ul>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/gabrielolvv/ghostclip" target="_blank" rel="noreferrer" data-i18n="exploreRepo">Explore the repository</a>
+              <a class="project-link" href="https://github.com/gabrielolvv/ghostclip/releases/latest" target="_blank" rel="noreferrer" data-i18n="latestRelease">Latest release</a>
+            </div>
+          </article>
+          <article class="mini-project reveal">
+            <span class="project-number" data-i18n="mousemodesType">03 / WINDOWS UTILITY</span>
+            <h3>MouseModes</h3>
+            <p data-i18n="mousemodesCopy">A tray app that switches mouse and power settings between Performance and Everyday modes — manually, by global hotkey or automatically when a game launches. Every change is reverted on exit, and self-updates are verified against the release’s SHA-256.</p>
+            <ul class="tags"><li>C#</li><li>WinForms</li><li>Win32</li><li>NSIS</li><li>Windows</li></ul>
+            <div class="project-links">
+              <a class="project-link" href="https://gabrielolvv.github.io/mousemodes/" target="_blank" rel="noreferrer" data-i18n="visitSite">Visit the site</a>
+              <a class="project-link" href="https://github.com/gabrielolvv/mousemodes" target="_blank" rel="noreferrer" data-i18n="exploreRepo">Explore the repository</a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -386,7 +437,9 @@
         heroEyebrow: 'Backend-focused full-stack developer', heroTitle: 'I build systems that do the <em>hard work.</em>',
         heroCopy: 'Reliable APIs, practical automations and data processing tools — built to turn complex operations into software people can trust.',
         heroWork: 'See selected work', heroGithub: 'GitHub profile', heroResume: 'Download résumé', availability: 'Fortaleza, Brazil · Open to remote international roles',
-        workEyebrow: 'Selected work', workTitle: 'Proof over promises.', workIntro: 'A public project that shows how I think about reliability, security and developer experience — from architecture to tests and documentation.',
+        workEyebrow: 'Selected work', workTitle: 'Proof over promises.', workIntro: 'Public projects that show how I think about reliability, security and developer experience — from architecture to tests and documentation.',
+        ghostclipType: '02 / DESKTOP APP', ghostclipCopy: 'An open-source instant replay recorder for Windows that keeps the last minute of gameplay and saves it on a hotkey. Nothing runs inside the game: capture uses Desktop Duplication, encoding runs on the GPU and a supervised worker process restarts on failure without losing the buffer.', latestRelease: 'Latest release',
+        mousemodesType: '03 / WINDOWS UTILITY', mousemodesCopy: 'A tray app that switches mouse and power settings between Performance and Everyday modes — manually, by global hotkey or automatically when a game launches. Every change is reverted on exit, and self-updates are verified against the release’s SHA-256.', visitSite: 'Visit the site',
         ticker1: '<b>01</b> APIs', ticker2: '<b>02</b> Automation', ticker3: '<b>03</b> Data processing', ticker4: '<b>04</b> Cloud infrastructure', ticker5: '<b>05</b> Full-stack products',
         projectType: '01 / DEVELOPER TOOL', prismCopy: 'A deterministic GitHub Action that scans pull requests for risk signals before human review begins. It flags missing tests, large diffs, dependency changes and security-sensitive files — without executing untrusted repository code.', readCaseStudy: 'Read the case study', exploreRepo: 'Explore the repository', riskScan: 'PR #142 · risk scan', riskLevel: 'MEDIUM', finding1Title: 'Missing test changes', finding1Copy: 'Source changed without matching test files.', finding2Title: 'Dependency update', finding2Copy: 'package-lock.json requires supply-chain review.', finding3Title: 'Safe execution model', finding3Copy: 'Repository code was not executed.',
         buildEyebrow: 'What I build', buildTitle: 'From raw input to reliable output.', buildIntro: 'My strongest work sits where business operations meet software: moving data safely, automating repetitive workflows and making systems easier to maintain.',
@@ -400,7 +453,9 @@
         heroEyebrow: 'Desenvolvedor full-stack com foco em backend', heroTitle: 'Eu crio sistemas que fazem o <em>trabalho pesado.</em>',
         heroCopy: 'APIs confiáveis, automações práticas e ferramentas de processamento de dados — construídas para transformar operações complexas em software no qual as pessoas podem confiar.',
         heroWork: 'Ver projetos', heroGithub: 'Perfil no GitHub', heroResume: 'Baixar currículo', availability: 'Fortaleza, Brasil · Aberto a oportunidades internacionais remotas',
-        workEyebrow: 'Projeto em destaque', workTitle: 'Resultados acima de promessas.', workIntro: 'Um projeto público que mostra como penso sobre confiabilidade, segurança e experiência de desenvolvimento — da arquitetura aos testes e à documentação.',
+        workEyebrow: 'Projetos em destaque', workTitle: 'Resultados acima de promessas.', workIntro: 'Projetos públicos que mostram como penso sobre confiabilidade, segurança e experiência de desenvolvimento — da arquitetura aos testes e à documentação.',
+        ghostclipType: '02 / APP DESKTOP', ghostclipCopy: 'Gravador de replay instantâneo open source para Windows que guarda o último minuto de jogo e salva com um atalho. Nada roda dentro do jogo: a captura usa Desktop Duplication, a codificação roda na GPU e um processo worker supervisionado se reinicia em caso de falha sem perder o buffer.', latestRelease: 'Última versão',
+        mousemodesType: '03 / UTILITÁRIO PARA WINDOWS', mousemodesCopy: 'App de bandeja que alterna mouse e energia entre os modos Performance e Dia a dia — manualmente, por atalho global ou sozinho quando um jogo abre. Toda mudança é desfeita ao sair, e as atualizações automáticas são verificadas pelo SHA-256 da release.', visitSite: 'Visitar o site',
         ticker1: '<b>01</b> APIs', ticker2: '<b>02</b> Automação', ticker3: '<b>03</b> Processamento de dados', ticker4: '<b>04</b> Infraestrutura em nuvem', ticker5: '<b>05</b> Produtos full-stack',
         projectType: '01 / FERRAMENTA PARA DESENVOLVEDORES', prismCopy: 'Uma GitHub Action determinística que analisa pull requests em busca de sinais de risco antes da revisão humana. Ela identifica ausência de testes, diffs extensos, alterações de dependências e arquivos sensíveis à segurança — sem executar código não confiável do repositório.', readCaseStudy: 'Ler o estudo de caso', exploreRepo: 'Explorar o repositório', riskScan: 'PR #142 · análise de risco', riskLevel: 'MÉDIO', finding1Title: 'Testes não alterados', finding1Copy: 'O código-fonte mudou sem arquivos de teste correspondentes.', finding2Title: 'Dependência atualizada', finding2Copy: 'package-lock.json exige revisão da cadeia de dependências.', finding3Title: 'Modelo de execução seguro', finding3Copy: 'O código do repositório não foi executado.',
         buildEyebrow: 'O que eu construo', buildTitle: 'De dados brutos a resultados confiáveis.', buildIntro: 'Meu trabalho mais forte está no encontro entre operações de negócio e software: movimentar dados com segurança, automatizar fluxos repetitivos e tornar sistemas mais fáceis de manter.',
@@ -424,11 +479,13 @@
       const nextLanguage = language === 'en' ? 'Portuguese' : 'English';
       languageSwitch.setAttribute('aria-label', `Change language to ${nextLanguage}`);
       languageSwitch.setAttribute('title', `Change language to ${nextLanguage}`);
-      localStorage.setItem('portfolio-language', language);
+      try { localStorage.setItem('portfolio-language', language); } catch {}
     };
 
-    const preferredLanguage = localStorage.getItem('portfolio-language') === 'pt' ? 'pt' : 'en';
-    setLanguage(preferredLanguage);
+    let savedLanguage = null;
+    try { savedLanguage = localStorage.getItem('portfolio-language'); } catch {}
+    const browserLanguage = (navigator.language || '').toLowerCase().startsWith('pt') ? 'pt' : 'en';
+    setLanguage(savedLanguage === 'pt' || savedLanguage === 'en' ? savedLanguage : browserLanguage);
     languageSwitch.addEventListener('click', () => setLanguage(document.documentElement.lang === 'en' ? 'pt' : 'en'));
 
     document.getElementById('year').textContent = new Date().getFullYear();

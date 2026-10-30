@@ -8,9 +8,17 @@
   <meta property="og:type" content="article">
   <meta property="og:title" content="Prism Review — Engineering Case Study">
   <meta property="og:description" content="A deterministic, security-conscious GitHub Action that prepares pull requests for human review.">
-  <meta property="og:image" content="https://gabriel-oliveira-engineer.gabrieloliv-dev.chatgpt.site/og.png">
+  <meta property="og:image" content="https://gabrielolvv.github.io/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://gabrielolvv.github.io/prism-review/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prism Review — Engineering Case Study">
+  <meta name="twitter:description" content="A deterministic, security-conscious GitHub Action that prepares pull requests for human review.">
+  <meta name="twitter:image" content="https://gabrielolvv.github.io/og.jpg">
+  <link rel="canonical" href="https://gabrielolvv.github.io/prism-review/">
   <title>Prism Review — Engineering Case Study</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -81,18 +89,18 @@
     .button.secondary { background:transparent; color:var(--ink); border-color:var(--line); }
     footer { border-top:1px solid var(--line); }
     footer .wrap { min-height:100px; display:flex; justify-content:space-between; align-items:center; gap:1rem; color:var(--muted); font-size:.82rem; }
-    .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
-    .reveal.visible { opacity:1; transform:none; }
+    .js .reveal { opacity:0; transform:translateY(20px); transition:opacity .7s ease,transform .7s ease; }
+    .js .reveal.visible { opacity:1; transform:none; }
     @media(max-width:800px){ .section-head,.security{grid-template-columns:1fr}.problem-grid{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.connector{width:1px;height:34px;margin:auto}.decisions,.rules,.roadmap{grid-template-columns:1fr} }
     @media(max-width:560px){ .wrap{width:min(calc(100% - 1.25rem),var(--max))}.repo{display:none}h1{font-size:clamp(3.3rem,18vw,5rem)}.button{width:100%}footer .wrap{flex-direction:column;justify-content:center;text-align:center} }
-    @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto}.reveal{opacity:1;transform:none}*{transition-duration:.01ms!important}body::after{display:none} }
+    @media(prefers-reduced-motion:reduce){ html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none}*{transition-duration:.01ms!important}body::after{display:none} }
   </style>
 </head>
 <body>
   <div class="progress" id="progress" aria-hidden="true"></div>
   <header>
     <nav class="wrap" aria-label="Primary navigation">
-      <a class="back" href="/" data-i18n="back">Back to portfolio</a>
+      <a class="back" href="../" data-i18n="back">Back to portfolio</a>
       <div class="nav-actions">
         <button class="lang" id="lang" type="button" aria-label="Change language to Portuguese"><b data-opt="en">EN</b> / <span data-opt="pt">PT</span></button>
         <a class="repo" href="https://github.com/gabrielolvv/prism-review" target="_blank" rel="noreferrer" data-i18n="repo">View repository</a>
@@ -183,7 +191,7 @@
     </section>
   </main>
 
-  <footer><div class="wrap"><span>© 2026 Gabriel Oliveira</span><a href="/" data-i18n="back">Back to portfolio</a></div></footer>
+  <footer><div class="wrap"><span>© <span id="year">2026</span> Gabriel Oliveira</span><a href="../" data-i18n="back">Back to portfolio</a></div></footer>
 
   <script>
     const copy = {
@@ -191,8 +199,9 @@
       pt: { back:'Voltar ao portfólio',repo:'Ver repositório',eyebrow:'Estudo de caso de engenharia',lead:'Uma GitHub Action determinística que prepara pull requests para revisão humana ao destacar as mudanças que merecem atenção extra.',metaSecurity:'Segurança desde o projeto',metaTests:'Testes unitários',problemTitle:'O problema por trás da ferramenta.',problemIntro:'A atenção humana em revisões é valiosa. O objetivo não era substituir revisores, mas oferecer um ponto de partida focado antes de abrir o diff.',p1Title:'O risco está distribuído',p1Copy:'Testes, dependências, permissões e migrações podem mudar em muitos arquivos no mesmo pull request.',p2Title:'A atenção é limitada',p2Copy:'Revisores precisam entender onde o risco está concentrado sem classificar manualmente cada arquivo alterado.',p3Title:'Confiança precisa ser conquistada',p3Copy:'Uma ferramenta de revisão deve permanecer previsível, testável e útil sem depender de um serviço de IA pago.',flowTitle:'Um pipeline pequeno e explícito.',flowIntro:'Cada etapa possui uma responsabilidade, desde receber o evento até publicar um único relatório focado no revisor.',flow1:'Evento do pull request',flow2:'Arquivos alterados',flow3:'Motor de regras',flow4:'Comentário de revisão',rulesTitle:'Regras determinísticas, sinais úteis.',rulesIntro:'A primeira versão prioriza verificações explicáveis em vez de pontuações opacas. Cada resultado corresponde a uma mudança concreta.',r1:'Sinaliza pull requests que excedem limites configurados de arquivos ou linhas alteradas.',r2:'Destaca alterações de código-fonte sem mudanças correspondentes nos testes.',r3:'Mostra alterações em autenticação, permissões, CI, migrações e implantação.',r4:'Chama atenção para manifestos e lockfiles durante a revisão da cadeia de dependências.',decisionTitle:'Decisões que moldaram o produto.',decisionIntro:'A arquitetura prioriza clareza, padrões seguros e uma experiência simples para mantenedores.',d1Title:'Núcleo determinístico primeiro',d1Copy:'As regras podem ser testadas com fixtures, configuradas por repositório e compreendidas sem serviços externos. IA permanece como camada consultiva opcional.',d2Title:'Um comentário sempre atualizado',d2Copy:'Um marcador HTML identifica o relatório existente, permitindo atualizá-lo sem gerar ruído de notificações a cada push.',d3Title:'Superfície mínima de API',d3Copy:'O cliente GitHub utiliza rotas REST explícitas e evita pacotes auxiliares amplos, facilitando a auditoria de permissões e comportamento.',d4Title:'Análise local sem GitHub',d4Copy:'A análise baseada em fixtures torna o desenvolvimento das regras rápido e repetível, sem depender de um pull request real.',securityEyebrow:'Modelo de segurança',securityTitle:'Trate o conteúdo do pull request como não confiável.',s1Title:'Sem execução de código do repositório',s1Copy:'A análise utiliza dados do GitHub em vez de executar o código do pull request.',s2Title:'Permissões mínimas do token',s2Copy:'Apenas as permissões necessárias para ler mudanças e manter o relatório são solicitadas.',s3Title:'Redação do conteúdo do patch',s3Copy:'Conteúdo sensível é removido antes que futuros fluxos de enriquecimento possam utilizá-lo.',roadmapTitle:'Preparado para crescer sem enfraquecer o núcleo.',roadmapIntro:'O roadmap expande a superfície de relatórios mantendo verificações determinísticas como base.',m1Title:'Resumos consultivos',m1Copy:'Contexto opcional gerado por IA após a redação, claramente separado dos resultados determinísticos.',m2Title:'Modo GitHub App',m2Copy:'Processamento com filas e instalação por organização para adoção mais ampla.',m3Title:'Tendências de risco',m3Copy:'Um dashboard para equipes observarem riscos recorrentes em vários repositórios.',ctaTitle:'A melhor ferramenta de revisão torna o julgamento humano mais eficaz.',ctaCopy:'Explore a implementação, configuração, testes e modelo de segurança no repositório público.',email:'Enviar e-mail para Gabriel'}
     };
     const button=document.getElementById('lang');
-    function setLang(lang){ const d=copy[lang]; document.documentElement.lang=lang==='pt'?'pt-BR':'en'; document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=d[el.dataset.i18n]); document.querySelectorAll('[data-opt]').forEach(el=>el.outerHTML=el.dataset.opt===lang?`<b data-opt="${el.dataset.opt}">${el.textContent}</b>`:`<span data-opt="${el.dataset.opt}">${el.textContent}</span>`); button.setAttribute('aria-label',lang==='en'?'Change language to Portuguese':'Mudar idioma para inglês'); localStorage.setItem('portfolio-language',lang); }
-    setLang(localStorage.getItem('portfolio-language')==='pt'?'pt':'en'); button.addEventListener('click',()=>setLang(document.documentElement.lang==='en'?'pt':'en'));
+    function setLang(lang){ const d=copy[lang]; document.documentElement.lang=lang==='pt'?'pt-BR':'en'; document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=d[el.dataset.i18n]); document.querySelectorAll('[data-opt]').forEach(el=>el.outerHTML=el.dataset.opt===lang?`<b data-opt="${el.dataset.opt}">${el.textContent}</b>`:`<span data-opt="${el.dataset.opt}">${el.textContent}</span>`); button.setAttribute('aria-label',lang==='en'?'Change language to Portuguese':'Mudar idioma para inglês'); document.title=lang==='pt'?'Prism Review — Estudo de caso de engenharia':'Prism Review — Engineering Case Study'; try{localStorage.setItem('portfolio-language',lang)}catch{} }
+    let saved=null; try{saved=localStorage.getItem('portfolio-language')}catch{}
+    setLang(saved==='pt'||saved==='en'?saved:((navigator.language||'').toLowerCase().startsWith('pt')?'pt':'en')); document.getElementById('year').textContent=new Date().getFullYear(); button.addEventListener('click',()=>setLang(document.documentElement.lang==='en'?'pt':'en'));
     const progress=document.getElementById('progress'); function update(){ const range=document.documentElement.scrollHeight-innerHeight; progress.style.transform=`scaleX(${range>0?scrollY/range:0})`; } update(); addEventListener('scroll',update,{passive:true});
     if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!matchMedia('(prefers-reduced-motion:reduce)').matches){ addEventListener('pointermove',e=>{document.documentElement.style.setProperty('--px',`${e.clientX}px`);document.documentElement.style.setProperty('--py',`${e.clientY}px`)},{passive:true}); }
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1}); document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
